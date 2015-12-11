@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>JhpiegoDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{855de1df-9601-4544-bfd6-a8afd8efb09f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>JhpiegoDb</RootNamespace>
+    <AssemblyName>JhpiegoDb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="procedures" />
+    <Folder Include="Views Obsolete" />
+    <Folder Include="Views" />
+    <Folder Include="Tables" />
+    <Folder Include="Tables Obsolete" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="procedures\qry_append_FacilityData_fromTemp.sql" />
+    <Build Include="procedures\qryAppendAccessFacilityData.sql" />
+    <Build Include="procedures\proc DoNotUse DeleteFacilityData.sql" />
+    <Build Include="procedures\qryDeleteFromAccessFacilityData.sql" />
+    <Build Include="procedures\qryDeleteFromFacilityDataTemp.sql" />
+    <Build Include="procedures\qryDeleteSpecificSites.sql" />
+    <Build Include="Views Obsolete\qry0000.sql" />
+    <Build Include="Views Obsolete\Qry_FacilityData.sql" />
+    <Build Include="Views Obsolete\Qry_Invalid_ART_Data.sql" />
+    <Build Include="Views Obsolete\Qry_Invalid_MC_Data.sql" />
+    <Build Include="Views Obsolete\Qry_Invalid_PMTCT_Data.sql" />
+    <Build Include="Views Obsolete\Qry_Invalid_STI_Data.sql" />
+    <Build Include="Views Obsolete\Qry_Invalid_TBHIV_Data.sql" />
+    <Build Include="Views\MainData.sql" />
+    <Build Include="Views\qry_opyFromTempToMain_NonUnique.sql" />
+    <Build Include="Views\qryCopyFromAccessFacilityData.sql" />
+    <Build Include="Views\qryCopyFromTempToMain.sql" />
+    <Build Include="Views Obsolete\qrySample.sql" />
+    <Build Include="Tables\dbo.YearLookup.sql" />
+    <Build Include="Tables Obsolete\tblzNull.sql" />
+    <Build Include="Tables\dbo.accessFacilityDataTemp.Table.sql" />
+    <Build Include="Tables\dbo.AgeGroupLookUp.Table.sql" />
+    <Build Include="Tables\dbo.DistrictLookUp.Table.sql" />
+    <Build Include="Tables\dbo.FacilityData.Table.sql" />
+    <Build Include="Tables\dbo.facilityDataTemp.Table.sql" />
+    <Build Include="Tables\dbo.FacilityLookUp.Table.sql" />
+    <Build Include="Tables\dbo.FacilityServiceLookup.Table.sql" />
+    <Build Include="Tables\dbo.FacilityServices.Table.sql" />
+    <Build Include="Tables\dbo.FacilityTypeLookup.Table.sql" />
+    <Build Include="Tables\dbo.GenderLookUp.Table.sql" />
+    <Build Include="Tables\dbo.IndicatorLookup.Table.sql" />
+    <Build Include="Tables\dbo.MainData.Table.sql" />
+    <Build Include="Tables\dbo.MonthLookUp.Table.sql" />
+    <Build Include="Tables\dbo.ProgramAreaLookUp.Table.sql" />
+    <Build Include="Tables\dbo.ProvinceLookUp.Table.sql" />
+    <Build Include="Tables\dbo.Switchboard Items.Table.sql" />
+    <Build Include="Tables\dbo.tblFacilityDataEntryTemplate.Table.sql" />
+  </ItemGroup>
+</Project>
