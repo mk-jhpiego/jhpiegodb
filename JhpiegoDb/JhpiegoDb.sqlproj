@@ -58,10 +58,13 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="procedures" />
-    <Folder Include="Views Obsolete" />
     <Folder Include="Views" />
     <Folder Include="Tables" />
     <Folder Include="Tables Obsolete" />
+    <Folder Include="procedures\procs obsolete" />
+    <Folder Include="Views\Views Obsolete" />
+    <Folder Include="StaticData" />
+    <Folder Include="LatestDb" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="procedures\qry_append_FacilityData_fromTemp.sql" />
@@ -70,18 +73,10 @@
     <Build Include="procedures\qryDeleteFromAccessFacilityData.sql" />
     <Build Include="procedures\qryDeleteFromFacilityDataTemp.sql" />
     <Build Include="procedures\qryDeleteSpecificSites.sql" />
-    <Build Include="Views Obsolete\qry0000.sql" />
-    <Build Include="Views Obsolete\Qry_FacilityData.sql" />
-    <Build Include="Views Obsolete\Qry_Invalid_ART_Data.sql" />
-    <Build Include="Views Obsolete\Qry_Invalid_MC_Data.sql" />
-    <Build Include="Views Obsolete\Qry_Invalid_PMTCT_Data.sql" />
-    <Build Include="Views Obsolete\Qry_Invalid_STI_Data.sql" />
-    <Build Include="Views Obsolete\Qry_Invalid_TBHIV_Data.sql" />
     <Build Include="Views\MainData.sql" />
     <Build Include="Views\qry_opyFromTempToMain_NonUnique.sql" />
     <Build Include="Views\qryCopyFromAccessFacilityData.sql" />
     <Build Include="Views\qryCopyFromTempToMain.sql" />
-    <Build Include="Views Obsolete\qrySample.sql" />
     <Build Include="Tables\dbo.YearLookup.sql" />
     <Build Include="Tables Obsolete\tblzNull.sql" />
     <Build Include="Tables\dbo.accessFacilityDataTemp.Table.sql" />
@@ -91,15 +86,31 @@
     <Build Include="Tables\dbo.facilityDataTemp.Table.sql" />
     <Build Include="Tables\dbo.FacilityLookUp.Table.sql" />
     <Build Include="Tables\dbo.FacilityServiceLookup.Table.sql" />
-    <Build Include="Tables\dbo.FacilityServices.Table.sql" />
     <Build Include="Tables\dbo.FacilityTypeLookup.Table.sql" />
     <Build Include="Tables\dbo.GenderLookUp.Table.sql" />
     <Build Include="Tables\dbo.IndicatorLookup.Table.sql" />
-    <Build Include="Tables\dbo.MainData.Table.sql" />
     <Build Include="Tables\dbo.MonthLookUp.Table.sql" />
     <Build Include="Tables\dbo.ProgramAreaLookUp.Table.sql" />
     <Build Include="Tables\dbo.ProvinceLookUp.Table.sql" />
     <Build Include="Tables\dbo.Switchboard Items.Table.sql" />
     <Build Include="Tables\dbo.tblFacilityDataEntryTemplate.Table.sql" />
+    <Build Include="procedures\procs obsolete\qry0000.sql" />
+    <Build Include="Views\Views Obsolete\Qry_FacilityData.sql" />
+    <Build Include="Views\Views Obsolete\Qry_Invalid_ART_Data.sql" />
+    <Build Include="Views\Views Obsolete\Qry_Invalid_MC_Data.sql" />
+    <Build Include="Views\Views Obsolete\Qry_Invalid_PMTCT_Data.sql" />
+    <Build Include="Views\Views Obsolete\Qry_Invalid_STI_Data.sql" />
+    <Build Include="Views\Views Obsolete\Qry_Invalid_TBHIV_Data.sql" />
+    <Build Include="Views\Views Obsolete\qrySample.sql" />
+    <Build Include="Tables Obsolete\dbo.FacilityServices.Table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
+    <None Include="StaticData\Script.FacilityLookup.sql" />
+    <None Include="StaticData\backupDb.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JhpiegoDb.publish.xml" />
+    <None Include="LatestDb\JhpiegoDb.bak" />
   </ItemGroup>
 </Project>

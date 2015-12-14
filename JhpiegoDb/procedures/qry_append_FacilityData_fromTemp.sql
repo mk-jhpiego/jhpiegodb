@@ -1,8 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[qry_append_FacilityData_fromTemp]
 AS
-	INSERT INTO FacilityData ( FacilityIndex, [Indicator], ReferenceYear, ReferenceMonth, Sex, AgeGroup, [Number] )
-SELECT qryCopyFromTempToMain.FacilityIndex, qryCopyFromTempToMain.IndicatorCode, qryCopyFromTempToMain.YearID, qryCopyFromTempToMain.ReferenceMonth, qryCopyFromTempToMain.Sex, qryCopyFromTempToMain.AgeGroupId, qryCopyFromTempToMain.Value
+INSERT INTO FacilityData ( FacilityIndex, [Indicator], ReferenceYear, ReferenceMonth, Sex, AgeGroup, [Number] )
+SELECT FacilityIndex, IndicatorCode, YearID, ReferenceMonth, Sex, AgeGroupId, Value
 FROM qryCopyFromTempToMain
-WHERE ((([qryCopyFromTempToMain].[FacilityIndex] & [qryCopyFromTempToMain].[YearID] & [qryCopyFromTempToMain].[ReferenceMonth]) Not In (select FacilityIndex&ReferenceYear&ReferenceMonth from FacilityData
-)));
+WHERE 
+(	
+		(
+			convert(varchar,[FacilityIndex]) +
+			convert(varchar,[YearID]) +
+			convert(varchar,[ReferenceMonth]) 
+		) 
+		Not In 
+		( select convert(varchar,[FacilityIndex]) + convert(varchar,ReferenceYear) + convert(varchar,ReferenceMonth) as FacilityYearMonth from FacilityData )	
+);
 RETURN 0

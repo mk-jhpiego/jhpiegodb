@@ -1,6 +1,14 @@
 ﻿CREATE VIEW [dbo].[qry_opyFromTempToMain_NonUnique]
-	AS 
-	--SELECT * FROM [SomeTableOrView]
-	SELECT count(*) AS MatchedRecords
-FROM (SELECT DISTINCT qryCopyFromTempToMain.FacilityIndex & qryCopyFromTempToMain.YearID & qryCopyFromTempToMain.ReferenceMonth FROM qryCopyFromTempToMain INNER JOIN FacilityData ON (qryCopyFromTempToMain.FacilityIndex = FacilityData.FacilityIndex) AND (qryCopyFromTempToMain.ReferenceMonth = FacilityData.ReferenceMonth) AND (qryCopyFromTempToMain.YearID = FacilityData.ReferenceYear))  AS x;
-
+AS 
+SELECT count(*) AS MatchedRecords
+FROM (
+SELECT DISTINCT 
+convert(varchar, q.FacilityIndex) + 
+convert(varchar, q.YearID)+
+convert(varchar, q.ReferenceMonth ) FacilityYearMonthKey
+FROM qryCopyFromTempToMain q INNER JOIN FacilityData f ON 
+(q.FacilityIndex = f.FacilityIndex)
+ AND 
+ (q.ReferenceMonth = f.ReferenceMonth) 
+ AND (q.YearID = f.ReferenceYear)
+ )  AS x;
