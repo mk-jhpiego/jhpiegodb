@@ -103,13 +103,6 @@ select '9070' DistrictID, 'Shangombo' DistrictName, 90 ProvinceID
 
 :r .\Script.FacilityLookup.sql
 
-insert into ProgramAreaLookup
-select 1 ProgramAreaID, 'ART' ProgramArea union
-select 2 ProgramAreaID, 'MC' ProgramArea union
-select 3 ProgramAreaID, 'PMTCT' ProgramArea union
-select 4 ProgramAreaID, 'STI' ProgramArea union
-select 5 ProgramAreaID, 'TB/HIV' ProgramArea;
-
  insert into MonthLookup (MonthID, [MonthName], [Quarter])
 select 1 MonthID, 'January' [MonthName], 1 [Quarter] union
 select 2 MonthID, 'February' [MonthName], 1 [Quarter] union
@@ -124,31 +117,25 @@ select 10 MonthID, 'October' [MonthName], 4 [Quarter] union
 select 11 MonthID, 'November' [MonthName], 4 [Quarter] union
 select 12 MonthID, 'December' [MonthName], 4 [Quarter];
 
-insert into IndicatorLookup (IndicatorID, IndicatorDescription, zPosition, ProgramAreaID)
-select 'MC1' IndicatorID, 'Total number of males circumcised as part of the minimum package of MC for HIV prevention services (MC1 = MC1a + MC1b)' IndicatorDescription, 1 zPosition , 2 ProgramAreaID union
-select 'MC1a' IndicatorID, 'Number of males circumcised as part of the minimum package of MC for HIV prevention services (Static MC site)' IndicatorDescription, 2 zPosition , 2 ProgramAreaID union
-select 'MC1b' IndicatorID, 'Number of males circumcised as part of the minimum package of MC for HIV prevention services (Mobile Site)' IndicatorDescription, 3 zPosition , 2 ProgramAreaID union
-select 'MC1c' IndicatorID, 'Number circumcised by surgical technique (forceps guided, dorsal slit, sleeve resection)' IndicatorDescription, 4 zPosition , 2 ProgramAreaID union
-select 'MC2' IndicatorID, 'Number of circumcised clients experiencing at least one moderate or severe adverse event (AE) during or following surgery, within the reporting period (MC2 = MC2a + MC2b)' IndicatorDescription, 5 zPosition , 2 ProgramAreaID union
-select 'MC2a' IndicatorID, 'Number of VMMC clients with one or more moderate or severe surgical intra-operative AE(s)' IndicatorDescription, 6 zPosition , 2 ProgramAreaID union
-select 'MC2b' IndicatorID, 'Number of VMMC clients with one or more moderate or severe surgical post-operative AE(s)' IndicatorDescription, 7 zPosition , 2 ProgramAreaID union
-select 'MC2c' IndicatorID, 'Number of clients with one or more moderate surgical post-operative AE(s), but no severe surgical post-operative AE(s)' IndicatorDescription, 8 zPosition , 2 ProgramAreaID union
-select 'MC2d' IndicatorID, 'Number of clients with one or more severe surgical intra-operative AE(s)' IndicatorDescription, 9 zPosition , 2 ProgramAreaID union
-select 'MC2e' IndicatorID, 'Number of surgically circumcised clients who returned at least once for follow-up care within 14 days of their circumcision surgery' IndicatorDescription, 10 zPosition , 2 ProgramAreaID union
-select 'MC2f' IndicatorID, 'Number of surgically circumcised clients who did NOT return for follow-up care within 14 days of their circumcision surgery' IndicatorDescription, 11 zPosition , 2 ProgramAreaID union
-select 'MC3' IndicatorID, 'Number of MC clients pre-test counseled, tested and collected HIV test results at MC centers' IndicatorDescription, 12 zPosition , 2 ProgramAreaID union
-select 'MC3a' IndicatorID, 'Number of HIV negative clients (tested HIV negative at VMMC site)' IndicatorDescription, 13 zPosition , 2 ProgramAreaID union
-select 'MC3b' IndicatorID, 'Number of clients with undocumented/indeterminate HIV status or not tested for HIV at VMMC site.' IndicatorDescription, 14 zPosition , 2 ProgramAreaID union
-select 'MC4' IndicatorID, 'Number of MC clients testing positive for HIV and collecting results at MC centers' IndicatorDescription, 15 zPosition , 2 ProgramAreaID union
-select 'MC4a' IndicatorID, 'Number of MC clients testing positive for HIV, collecting results and referred for clinical care beyond MC' IndicatorDescription, 16 zPosition , 2 ProgramAreaID union
-select 'MC4b' IndicatorID, 'Number of MC clients who reached the referral service (ART, STI)' IndicatorDescription, 17 zPosition , 2 ProgramAreaID;
+--DO not change the alternate names
+insert into ProgramAreaLookup(ProgramAreaID,ProgramArea,AlternameName)
+select 1 ProgramAreaID, 'ART' ProgramArea, 'ART' AlternameName union
+select 2 ProgramAreaID, 'MC' ProgramArea , 'Prevention-MC' AlternameName union
+select 3 ProgramAreaID, 'PMTCT' ProgramArea , 'PMTCT' AlternameName union
+select 4 ProgramAreaID, 'STI' ProgramArea , 'STI' AlternameName union
+select 5 ProgramAreaID, 'TB' ProgramArea , 'TB' AlternameName union
+select 6 ProgramAreaID, 'Family Planning' ProgramArea , 'Family Planning' AlternameName union
+select 7 ProgramAreaID, 'Prevention - PWP' ProgramArea , 'Prevention - PWP' AlternameName union
+select 8 ProgramAreaID, 'Clinical Care' ProgramArea, 'Clinical Care' AlternameName;
 
 
-insert into GenderLookUp(GenderID, Gender)
-select 1 GenderID, 'F' Gender union
-select 2 GenderID, 'M' Gender union
-select 9 GenderID, 'NA' Gender union
-select 99 GenderID, 'MissingData' Gender;
+:r .\Script.IndicatorCodes.sql
+
+insert into GenderLookUp(GenderID, Gender, GenderLongName)
+select 1 GenderID, 'F' Gender, 'Female' GenderLongName union
+select 2 GenderID, 'M' Gender, 'Male' GenderLongName union
+select 9 GenderID, 'NA' Gender, 'NA' GenderLongName union
+select 99 GenderID, 'MissingData' Gender , 'MissingData' GenderLongName;
 
 
  insert into FacilityTypeLookup(FacilityTypeID, FacilityType)
@@ -163,7 +150,6 @@ select 3 FacilityServiceID, 'PMTCT' FacilityService union
 select 4 FacilityServiceID, 'STI' FacilityService union
 select 5 FacilityServiceID, 'TB/HIV' FacilityService;
 
-
 insert into AgeGroupLookup (AgeGroupID,AgeGroupName)
 select 1 AgeGroupID, '< 1' AgeGroupName union
 select 2 AgeGroupID, '1-4' AgeGroupName union
@@ -174,7 +160,42 @@ select 6 AgeGroupID, '20-24' AgeGroupName union
 select 7 AgeGroupID, '25-29' AgeGroupName union
 select 8 AgeGroupID, '30-49' AgeGroupName union
 select 9 AgeGroupID, '50+' AgeGroupName union
+select 10 AgeGroupID, '25-49' AgeGroupName union
+select 11 AgeGroupID, '15+' AgeGroupName union
+select 12 AgeGroupID, '<10' AgeGroupName union
+select 13 AgeGroupID, '<15' AgeGroupName union
+select 14 AgeGroupID, '<20' AgeGroupName union
+select 70 AgeGroupID, 'Total' AgeGroupName union
 select 99 AgeGroupID, 'Missing Data' AgeGroupName;
+
+insert into AgeGroupLookupAlternate (AgeGroup, AgeGroupId)
+select '< 1' AgeGroup, 1 AgeGroupId union 
+select '<1' AgeGroup, 1 AgeGroupId union 
+select '1 – 4' AgeGroup, 2 AgeGroupId union 
+select '1 to 4' AgeGroup, 2 AgeGroupId union 
+select '1-4' AgeGroup, 2 AgeGroupId union 
+select '5 to 9' AgeGroup, 3 AgeGroupId union 
+select '5-9' AgeGroup, 3 AgeGroupId union 
+select '10 to 14' AgeGroup, 4 AgeGroupId union 
+select '10-14' AgeGroup, 4 AgeGroupId union 
+select '15 to 19' AgeGroup, 5 AgeGroupId union 
+select '15-19' AgeGroup, 5 AgeGroupId union 
+select '20 to 24' AgeGroup, 6 AgeGroupId union 
+select '20- 24' AgeGroup, 6 AgeGroupId union 
+select '20-24' AgeGroup, 6 AgeGroupId union 
+select '25-29' AgeGroup, 7 AgeGroupId union 
+select '30-49' AgeGroup, 8 AgeGroupId union 
+select '50+' AgeGroup, 9 AgeGroupId union 
+select '25 to 49' AgeGroup, 10 AgeGroupId union 
+select '25- 49' AgeGroup, 10 AgeGroupId union 
+select '25-49' AgeGroup, 10 AgeGroupId union 
+select '15+' AgeGroup, 11 AgeGroupId union 
+select '<10' AgeGroup, 12 AgeGroupId union 
+select '<15' AgeGroup, 13 AgeGroupId union 
+select '<20' AgeGroup, 14 AgeGroupId union 
+select 'Total' AgeGroup, 70 AgeGroupId union 
+select 'Missing Data' AgeGroup, 99 AgeGroupId; 
+
 
 insert into [dbo].[YearLookUp](YearId, YearName, Yposition) 
 select 1 YearId, 2005 YearName, 99 Yposition union

@@ -62,7 +62,6 @@
     <Folder Include="Tables" />
     <Folder Include="Tables Obsolete" />
     <Folder Include="procedures\procs obsolete" />
-    <Folder Include="Views\Views Obsolete" />
     <Folder Include="StaticData" />
     <Folder Include="LatestDb" />
   </ItemGroup>
@@ -95,14 +94,9 @@
     <Build Include="Tables\dbo.Switchboard Items.Table.sql" />
     <Build Include="Tables\dbo.tblFacilityDataEntryTemplate.Table.sql" />
     <Build Include="procedures\procs obsolete\qry0000.sql" />
-    <Build Include="Views\Views Obsolete\Qry_FacilityData.sql" />
-    <Build Include="Views\Views Obsolete\Qry_Invalid_ART_Data.sql" />
-    <Build Include="Views\Views Obsolete\Qry_Invalid_MC_Data.sql" />
-    <Build Include="Views\Views Obsolete\Qry_Invalid_PMTCT_Data.sql" />
-    <Build Include="Views\Views Obsolete\Qry_Invalid_STI_Data.sql" />
-    <Build Include="Views\Views Obsolete\Qry_Invalid_TBHIV_Data.sql" />
-    <Build Include="Views\Views Obsolete\qrySample.sql" />
     <Build Include="Tables Obsolete\dbo.FacilityServices.Table.sql" />
+    <Build Include="Tables\dbo.AgeGroupLookupAlternate.Table.sql" />
+    <Build Include="Views\FacilityList.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
@@ -112,5 +106,6 @@
   <ItemGroup>
     <None Include="JhpiegoDb.publish.xml" />
     <None Include="LatestDb\JhpiegoDb.bak" />
+    <None Include="StaticData\Script.IndicatorCodes.sql" />
   </ItemGroup>
 </Project>

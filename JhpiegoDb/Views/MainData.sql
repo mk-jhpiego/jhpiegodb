@@ -1,27 +1,24 @@
 ﻿CREATE VIEW [dbo].[MainData]
 AS 
-SELECT ProvinceLookUp.ProvinceName, DistrictLookUp.DistrictName, FacilityLookUp.FacilityName, 
-FacilityLookUp.[Facility Name_JHPEIGO], ProgramAreaLookUp.ProgramAreaID, ProgramAreaLookUp.ProgramArea, 
-IndicatorLookup.IndicatorID, IndicatorLookup.zPosition AS ID_Order, IndicatorLookup.IndicatorDescription, 
-YearLookUp.YearID, 
-YearLookUp.YearName AS [Year], 
-MonthLookUp.MonthID, MonthLookUp.[MonthName] AS [Month], 
-MonthLookUp.[Quarter], 
-GenderLookUp.Gender, AgeGroupLookUp.AgeGroupName AS AgeGroup, 
-[YearLookUp].[YearName] + ' ' + Left([MonthLookUp].[MonthName],3) AS [Year Month]
---,IIf([YearID]>0,'1') AS [Counter]
-, FacilityData.Number, 
-AgeGroupLookUp.AgeGroupID, GenderLookUp.GenderID, IndicatorLookup.zPosition
-FROM YearLookUp 
-INNER JOIN (
-ProvinceLookUp INNER JOIN (
-MonthLookUp INNER JOIN ((
-ProgramAreaLookUp INNER JOIN IndicatorLookup ON ProgramAreaLookUp.ProgramAreaID = IndicatorLookup.ProgramAreaID) 
-INNER JOIN 
-(GenderLookUp INNER JOIN ((
-DistrictLookUp INNER JOIN FacilityLookUp ON DistrictLookUp.DistrictID = FacilityLookUp.DistrictID) 
-INNER JOIN (
-AgeGroupLookUp INNER JOIN FacilityData ON AgeGroupLookUp.AgeGroupID = FacilityData.AgeGroup) 
-ON FacilityLookUp.FacilityIndex = FacilityData.FacilityIndex) ON GenderLookUp.GenderID = FacilityData.Sex) 
-ON IndicatorLookup.IndicatorID = FacilityData.Indicator) ON MonthLookUp.MonthID = FacilityData.ReferenceMonth) 
-ON ProvinceLookUp.ProvinceID = DistrictLookUp.ProvinceID) ON YearLookUp.YearID = FacilityData.ReferenceYear;
+SELECT fl.ProvinceName, fl.DistrictName, fl.FacilityName, 
+fl.[FacilityName_JHPEIGO], pa.ProgramAreaID, pa.ProgramArea, 
+il.IndicatorID, il.zPosition AS ID_Order, il.IndicatorDescription, 
+yr.YearID, 
+yr.YearName AS [Year], 
+mnth.MonthID, 
+mnth.[MonthName] AS [Month], 
+mnth.[Quarter], 
+gndr.Gender, agrp.AgeGroupName AS AgeGroup, 
+convert(varchar,yr.[YearName])+' '+
+substring(mnth.[MonthName],1,3)
+AS 'Year Month',
+Indicatorvalue, 
+agrp.AgeGroupID, gndr.GenderID
+FROM FacilityData  f 
+join YearLookUp yr on f.ReferenceYear = yr.YearID
+join MonthLookUp mnth on f.ReferenceMonth = mnth.MonthID
+join FacilityList fl on f.FacilityIndex = fl.FacilityIndex 
+join IndicatorLookup il on f.IndicatorSerial = il.IndicatorSerial
+join ProgramAreaLookUp pa on il.ProgramAreaID = pa.ProgramAreaID
+join GenderLookup gndr on f.GenderId = gndr.GenderID
+join AgeGroupLookUp agrp on f.AgeGroupId = agrp.AgeGroupID
