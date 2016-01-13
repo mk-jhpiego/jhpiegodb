@@ -10,7 +10,17 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+ insert into FacilityTypeLookup(FacilityTypeID, FacilityType)
+select 1 FacilityTypeID, 'Hospital' FacilityType union
+select 2 FacilityTypeID, 'Health Centre' FacilityType;
 
+
+insert into FacilityServiceLookup(FacilityServiceID, FacilityService)
+select 1 FacilityServiceID, 'ART' FacilityService union
+select 2 FacilityServiceID, 'MC' FacilityService union
+select 3 FacilityServiceID, 'PMTCT' FacilityService union
+select 4 FacilityServiceID, 'STI' FacilityService union
+select 5 FacilityServiceID, 'TB/HIV' FacilityService;
 
 --ProvinceLookup
 insert into ProvinceLookup(ProvinceId, ProvinceName)
@@ -26,11 +36,12 @@ select 90 ProvinceId, 'Western' ProvinceName;
 
 
 insert into DistrictLookUp(DistrictID,DistrictName,ProvinceID)
-  select '1010' DistrictID, 'Chibombo' DistrictName, 10 ProvinceID union
+select '1010' DistrictID, 'Chibombo' DistrictName, 10 ProvinceID union
 select '1020' DistrictID, 'Kabwe Urban' DistrictName, 10 ProvinceID union
 select '1030' DistrictID, 'Kapirimposhi' DistrictName, 10 ProvinceID union
 select '1040' DistrictID, 'Mkushi' DistrictName, 10 ProvinceID union
 select '1050' DistrictID, 'Mumbwa' DistrictName, 10 ProvinceID union
+select '1086' DistrictID, 'Shibuyunji' DistrictName, 10 ProvinceID union
 select '1060' DistrictID, 'Serenje' DistrictName, 10 ProvinceID union
 select '2010' DistrictID, 'Chililabombwe' DistrictName, 20 ProvinceID union
 select '2020' DistrictID, 'Chingola' DistrictName, 20 ProvinceID union
@@ -137,18 +148,6 @@ select 2 GenderID, 'M' Gender, 'Male' GenderLongName union
 select 9 GenderID, 'NA' Gender, 'NA' GenderLongName union
 select 99 GenderID, 'MissingData' Gender , 'MissingData' GenderLongName;
 
-
- insert into FacilityTypeLookup(FacilityTypeID, FacilityType)
-select 1 FacilityTypeID, 'Hospital' FacilityType union
-select 2 FacilityTypeID, 'Health Centre' FacilityType;
-
-
-insert into FacilityServiceLookup(FacilityServiceID, FacilityService)
-select 1 FacilityServiceID, 'ART' FacilityService union
-select 2 FacilityServiceID, 'MC' FacilityService union
-select 3 FacilityServiceID, 'PMTCT' FacilityService union
-select 4 FacilityServiceID, 'STI' FacilityService union
-select 5 FacilityServiceID, 'TB/HIV' FacilityService;
 
 insert into AgeGroupLookup (AgeGroupID,AgeGroupName)
 select 1 AgeGroupID, '< 1' AgeGroupName union
