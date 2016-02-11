@@ -1,224 +1,116 @@
-﻿/*
-Post-Deployment Script Template							
---------------------------------------------------------------------------------------
- This file contains SQL statements that will be appended to the build script.		
- Use SQLCMD syntax to include a file in the post-deployment script.			
- Example:      :r .\myfile.sql								
- Use SQLCMD syntax to reference a variable in the post-deployment script.		
- Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
-
-
-Insert into FacilityLookup (FacilityIndex,FacilityID,FacilityName,DistrictID,FacilityTypeId,[FacilityName_JHPEIGO])
+﻿print 'FacilityLookUp';
 --DOD Sites
-select 200 FacilityIndex, ' 1050270' FacilityID, 'ZAF Mumbwa Sick Quarters' FacilityName,   '1050' DistrictID, 2 FacilityTypeId, 'ZAF Mumbwa Sick Quarters' [FacilityName_JHPEIGO] union 
-select 201 FacilityIndex, ' 1050280' FacilityID, 'ZNS Kalenda Camp' FacilityName,   '1050' DistrictID, 2 FacilityTypeId, 'ZNS Kalenda Camp' [FacilityName_JHPEIGO] union 
-select 202 FacilityIndex, ' 3030370' FacilityID, 'Gondar Camp Hospital' FacilityName,   '3030' DistrictID, 2 FacilityTypeId, 'Gondar Camp Hospital' [FacilityName_JHPEIGO] union 
-select 203 FacilityIndex, ' 3030410' FacilityID, 'ZNS Chiwoko Camp' FacilityName,   '3030' DistrictID, 2 FacilityTypeId, 'ZNS Chiwoko Camp' [FacilityName_JHPEIGO] union 
-select 204 FacilityIndex, ' 3040130' FacilityID, 'ZNS Mtetezi Camp' FacilityName,   '3040' DistrictID, 2 FacilityTypeId, 'ZNS Mtetezi Camp' [FacilityName_JHPEIGO] union 
-select 205 FacilityIndex, ' 3030XX0' FacilityID, 'ZNS Lumezi' FacilityName,   '3030' DistrictID, 2 FacilityTypeId, 'ZNS Lumezi' [FacilityName_JHPEIGO] union 
-select 206 FacilityIndex, ' 3070AA0' FacilityID, 'ZNS Nyimba Camp' FacilityName,   '3070' DistrictID, 2 FacilityTypeId, 'ZNS Nyimba Camp' [FacilityName_JHPEIGO] union 
-select 207 FacilityIndex, ' 5010AC0' FacilityID, 'ZNS Chongwe Camp' FacilityName,   '5010' DistrictID, 2 FacilityTypeId, 'ZNS Chongwe Camp' [FacilityName_JHPEIGO] union 
-select 208 FacilityIndex, ' 5020180' FacilityID, 'ZNS Kafue Camp' FacilityName,   '5020' DistrictID, 2 FacilityTypeId, 'ZNS Kafue Camp' [FacilityName_JHPEIGO] union 
-select 209 FacilityIndex, ' 5040GI0' FacilityID, 'Arakan Camp Hospital' FacilityName,   '5040' DistrictID, 2 FacilityTypeId, 'Arakan Camp Hospital' [FacilityName_JHPEIGO] union 
-select 210 FacilityIndex, ' 8010310' FacilityID, 'ZNS Choma Camp' FacilityName,   '8010' DistrictID, 2 FacilityTypeId, 'ZNS Choma Camp' [FacilityName_JHPEIGO] union 
-select 211 FacilityIndex, ' 8060XX0' FacilityID, 'Army School of Ordinance' FacilityName,   '8060' DistrictID, 2 FacilityTypeId, 'Army School of Ordinance' [FacilityName_JHPEIGO] union 
-select 212 FacilityIndex, ' 8060AC0' FacilityID, 'ZAF Livingstone Sick Quarters' FacilityName,   '8060' DistrictID, 2 FacilityTypeId, 'ZAF Livingstone Sick Quarters' [FacilityName_JHPEIGO] union 
-select 213 FacilityIndex, ' 9020240' FacilityID, 'Luena Barracks Camp Hospital' FacilityName,   '9020' DistrictID, 2 FacilityTypeId, 'Luena Barracks Camp Hospital' [FacilityName_JHPEIGO] union 
-select 214 FacilityIndex, ' 90201540' FacilityID, 'ZNS Mangango Camp' FacilityName,   '9020' DistrictID, 2 FacilityTypeId, 'ZNS Mangango Camp' [FacilityName_JHPEIGO]  union
+Insert into FacilityLookUp (FacilityIndex,FacilityID,FacilityName,DistrictID,FacilityTypeId,[FacilityName_JHPEIGO])
+Select 200, '1050270', 'ZAF Mumbwa Sick Quarters', 1050, 2, 'ZAF Mumbwa Sick Quarters' union all
+Select 201, '1050280', 'ZNS Kalenda Camp', 1050, 2, 'ZNS Kalenda Camp' union all
+Select 202, '3030370', 'Gondar Camp Hospital', 3030, 2, 'Gondar Camp Hospital' union all
+Select 203, '3030410', 'ZNS Chiwoko Camp', 3030, 2, 'ZNS Chiwoko Camp' union all
+Select 204, '3040130', 'ZNS Mtetezi Camp', 3040, 2, 'ZNS Mtetezi Camp' union all
+Select 205, '3030XX0', 'ZNS Lumezi', 3030, 2, 'ZNS Lumezi' union all
+Select 206, '3070AA0', 'ZNS Nyimba Camp', 3070, 2, 'ZNS Nyimba Camp' union all
+Select 207, '5010AC0', 'ZNS Chongwe Camp', 5010, 2, 'ZNS Chongwe Camp' union all
+Select 208, '5020180', 'ZNS Kafue Camp', 5020, 2, 'ZNS Kafue Camp' union all
+Select 209, '5040GI0', 'Arakan Camp Hospital', 5040, 2, 'Arakan Camp Hospital' union all
+Select 210, '8010310', 'ZNS Choma Camp', 8010, 2, 'ZNS Choma Camp' union all
+Select 211, '8060XX0', 'Army School of Ordinance', 8060, 2, 'Army School of Ordinance' union all
+Select 212, '8060AC0', 'ZAF Livingstone Sick Quarters', 8060, 2, 'ZAF Livingstone Sick Quarters' union all
+Select 213, '9020240', 'Luena Barracks Camp Hospital', 9020, 2, 'Luena Barracks Camp Hospital' union all
+Select 214, '90201540', 'ZNS Mangango Camp', 9020, 2, 'ZNS Mangango Camp' union all
 
 --CDC IHP Sites
-select 1 FacilityIndex, '3080010' FacilityID, 'Petauke District Hospital' FacilityName, 
-  '3080' DistrictID, 1 FacilityTypeId, 'Petauke District Hospital' [FacilityName_JHPEIGO] union
-select 2 FacilityIndex, '6080240' FacilityID, 'Tazara Clinic' FacilityName, 
-  '6080' DistrictID, 2 FacilityTypeId, 'Tazara Clinic' [FacilityName_JHPEIGO] union
-select 3 FacilityIndex, '1020020' FacilityID, 'Kabwe General Hospital' FacilityName, 
-  '1020' DistrictID, 1 FacilityTypeId, 'Kabwe General Hospital' [FacilityName_JHPEIGO] union
-select 4 FacilityIndex, '2040010' FacilityID, 'Kitwe Central Hospital' FacilityName, 
-  '2040' DistrictID, 1 FacilityTypeId, 'Kitwe Central Hospital' [FacilityName_JHPEIGO] union
-select 5 FacilityIndex, '2100020' FacilityID, 'Ndola Central Hospital' FacilityName, 
-  '2100' DistrictID, 1 FacilityTypeId, 'Ndola Central Hospital' [FacilityName_JHPEIGO] union
-select 6 FacilityIndex, '3010110' FacilityID, 'Chadiza HC' FacilityName, 
-  '3010' DistrictID, 2 FacilityTypeId, 'Chadiza Urban Health Clinic' [FacilityName_JHPEIGO] union
-select 7 FacilityIndex, '3030010' FacilityID, 'Chipata General Hospital' FacilityName, 
-  '3030' DistrictID, 1 FacilityTypeId, 'Chipata General Hospital' [FacilityName_JHPEIGO] union
-select 8 FacilityIndex, '3030020' FacilityID, 'Mwami Hospital' FacilityName, 
-  '3030' DistrictID, 1 FacilityTypeId, 'Mwami Mission Hospital' [FacilityName_JHPEIGO] union
-select 9 FacilityIndex, '3060010' FacilityID, 'Kamoto Mission Hospital' FacilityName, 
-  '3060' DistrictID, 1 FacilityTypeId, 'Kamoto Mission Hospital' [FacilityName_JHPEIGO] union
-select 10 FacilityIndex, '3060120' FacilityID, 'Masumba' FacilityName, 
-  '3060' DistrictID, 2 FacilityTypeId, 'Masumba Zonal Health Clinic' [FacilityName_JHPEIGO] union
-select 11 FacilityIndex, '4030010' FacilityID, 'Mansa General Hospital' FacilityName, 
-  '4030' DistrictID, 1 FacilityTypeId, 'Mansa General Hospital' [FacilityName_JHPEIGO] union
-select 12 FacilityIndex, '4030110' FacilityID, 'Buntungwa RHC' FacilityName, 
-  '4030' DistrictID, 2 FacilityTypeId, 'Buntungwa RHC' [FacilityName_JHPEIGO] union
-select 13 FacilityIndex, '4030130' FacilityID, 'Chembe RHC' FacilityName, 
-  '4030' DistrictID, 2 FacilityTypeId, 'Chembe RHC' [FacilityName_JHPEIGO] union
-select 14 FacilityIndex, '4030250' FacilityID, 'Mabumba RHC' FacilityName, 
-  '4030' DistrictID, 2 FacilityTypeId, 'Mabumba RHC' [FacilityName_JHPEIGO] union
-select 15 FacilityIndex, '4060010' FacilityID, 'St. Pauls Hospital' FacilityName, 
-  '4060' DistrictID, 1 FacilityTypeId, 'St. Pauls Mission Hospital' [FacilityName_JHPEIGO] union
-select 16 FacilityIndex, '5040010' FacilityID, 'Chainama Hospital' FacilityName, 
-  '5040' DistrictID, 1 FacilityTypeId, 'Chainama Hospital' [FacilityName_JHPEIGO] union
-select 17 FacilityIndex, '5040270' FacilityID, 'Matero Reference' FacilityName, 
-  '5040' DistrictID, 1 FacilityTypeId, 'Matero Ref Clinic' [FacilityName_JHPEIGO] union
-select 18 FacilityIndex, '6050010' FacilityID, 'Kasama General Hospital' FacilityName, 
-  '6050' DistrictID, 1 FacilityTypeId, 'Kasama General Hospital' [FacilityName_JHPEIGO] union
-select 19 FacilityIndex, '7020020' FacilityID, 'Loloma Mission Hospital' FacilityName, 
-  '7020' DistrictID, 1 FacilityTypeId, 'Loloma Mission Hospital' [FacilityName_JHPEIGO] union
-select 20 FacilityIndex, '7030010' FacilityID, 'Mukinge Mission Hospital' FacilityName, 
-  '7030' DistrictID, 1 FacilityTypeId, 'Mukinge Mission Hospital' [FacilityName_JHPEIGO] union
-select 21 FacilityIndex, '7060010' FacilityID, 'Solwezi General Hospital' FacilityName, 
-  '7060' DistrictID, 1 FacilityTypeId, 'Solwezi General Hospital' [FacilityName_JHPEIGO] union
-select 22 FacilityIndex, '8060010' FacilityID, 'Livingstone Hospital' FacilityName, 
-  '8060' DistrictID, 1 FacilityTypeId, 'Livingstone General Hospital' [FacilityName_JHPEIGO] union
-select 23 FacilityIndex, '8070010' FacilityID, 'Mazabuka Hospital' FacilityName, 
-  '8070' DistrictID, 1 FacilityTypeId, 'Mazabuka District Hospital' [FacilityName_JHPEIGO] union
-select 24 FacilityIndex, '8090010' FacilityID, 'Namwala Hospital' FacilityName, 
-  '8090' DistrictID, 1 FacilityTypeId, 'Namwala Hospital' [FacilityName_JHPEIGO] union
-select 25 FacilityIndex, '8110010' FacilityID, 'Siavonga Hospital' FacilityName, 
-  '8110' DistrictID, 1 FacilityTypeId, 'Siavonga Hospital' [FacilityName_JHPEIGO] union
-select 26 FacilityIndex, '9040010' FacilityID, 'Lewanika General Hospital' FacilityName, 
-  '9040' DistrictID, 1 FacilityTypeId, 'Lewanika General Hospital' [FacilityName_JHPEIGO] union
-select 27 FacilityIndex, '8080300' FacilityID, 'Monze Urban Clinic' FacilityName, 
-  '8080' DistrictID, 1 FacilityTypeId, 'Monze Urban Clinic' [FacilityName_JHPEIGO] union
-select 28 FacilityIndex, '5020260' FacilityID, 'Nangongwe OPD/Maternity' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Nangongwe' [FacilityName_JHPEIGO] union
-select 29 FacilityIndex, '3030410' FacilityID, 'Chiwoko' FacilityName, 
-  '3030' DistrictID, 2 FacilityTypeId, 'Chiwoko' [FacilityName_JHPEIGO] union
-select 30 FacilityIndex, '5020130' FacilityID, 'Chilanga' FacilityName, 
-  '5050' DistrictID, 2 FacilityTypeId, 'Chilanga' [FacilityName_JHPEIGO] union
-select 31 FacilityIndex, '8110110' FacilityID, 'Lusitu' FacilityName, 
-  '8111' DistrictID, 2 FacilityTypeId, 'Chirundu-Lusitu' [FacilityName_JHPEIGO] union
-select 33 FacilityIndex, '8060040' FacilityID, 'Dambwa North' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Dambwa North' [FacilityName_JHPEIGO] union
-select 34 FacilityIndex, '8060130' FacilityID, 'Linda' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Linda' [FacilityName_JHPEIGO] union
-select 35 FacilityIndex, '8060190' FacilityID, 'Livingstone Airport' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Airport' [FacilityName_JHPEIGO] union
-select 36 FacilityIndex, '8060160' FacilityID, 'Mosi-oa-tunya' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Mosi-oa-tunya' [FacilityName_JHPEIGO] union
-select 37 FacilityIndex, '8060170' FacilityID, 'Police' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Livingstone-Police' [FacilityName_JHPEIGO] union
-select 38 FacilityIndex, '8060180' FacilityID, 'Prisons' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Livingstone-Prisons' [FacilityName_JHPEIGO] union
-select 39 FacilityIndex, '8070220' FacilityID, 'Kaonga' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Kaonga' [FacilityName_JHPEIGO] union
-select 40 FacilityIndex, '8070270' FacilityID, 'Mugoto' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Mugoto/Musangu' [FacilityName_JHPEIGO] union
-select 41 FacilityIndex, '8070280' FacilityID, 'Mukuyu' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Mukuyu' [FacilityName_JHPEIGO] union
-select 942 FacilityIndex, '8060310' FacilityID, 'Kasiya' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Kasiya' [FacilityName_JHPEIGO] union 
-select 943 FacilityIndex, '1020410' FacilityID, 'Katondo' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Katondo' [FacilityName_JHPEIGO] union 
-select 944 FacilityIndex, '1020330' FacilityID, 'Kawama-Kabwe Urban' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Kawama-Kabwe Urban' [FacilityName_JHPEIGO] union 
-select 945 FacilityIndex, '2040250' FacilityID, 'Kawama-Kitwe' FacilityName, 
-  '2040' DistrictID, 2 FacilityTypeId, 'Kawama-Kitwe' [FacilityName_JHPEIGO] union 
-select 946 FacilityIndex, '2100240' FacilityID, 'Kawama-Ndola' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Kawama-Ndola' [FacilityName_JHPEIGO] union 
-select 947 FacilityIndex, '1050450' FacilityID, 'Kayanga' FacilityName, 
-  '1086' DistrictID, 2 FacilityTypeId, 'Kayanga' [FacilityName_JHPEIGO] union 
-select 948 FacilityIndex, '5020190' FacilityID, 'Kazimva' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Kazimva' [FacilityName_JHPEIGO] union 
-select 950 FacilityIndex, '2100270' FacilityID, 'Lubuto' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Lubuto' [FacilityName_JHPEIGO] union 
-select 951 FacilityIndex, '8060200' FacilityID, 'Mahatma Gandhi' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Mahatma Gandhi' [FacilityName_JHPEIGO] union 
-select 952 FacilityIndex, '2100290' FacilityID, 'Masala Main' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Masala Main' [FacilityName_JHPEIGO] union 
-select 953 FacilityIndex, '1010230' FacilityID, 'Malambanyama' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Malambanyama' [FacilityName_JHPEIGO] union 
-select 954 FacilityIndex, '1010420' FacilityID, 'Malombe' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Malombe' [FacilityName_JHPEIGO] union 
-select 955 FacilityIndex, '5040250' FacilityID, 'Mandevu' FacilityName, 
-  '5040' DistrictID, 2 FacilityTypeId, 'Mandevu' [FacilityName_JHPEIGO] union 
-select 956 FacilityIndex, '2100300' FacilityID, 'Masala New' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Masala New' [FacilityName_JHPEIGO] union 
-select 957 FacilityIndex, '8070260' FacilityID, 'Mbayamusuma' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Mbayamusuma' [FacilityName_JHPEIGO] union 
-select 958 FacilityIndex, '1010430' FacilityID, 'Momboshi' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Momboshi' [FacilityName_JHPEIGO] union 
-select 959 FacilityIndex, '1020180' FacilityID, 'Kabwe Medium Prison' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Kabwe Medium Prison' [FacilityName_JHPEIGO] union 
-select 960 FacilityIndex, '2040510' FacilityID, 'Mulenga' FacilityName, 
-  '2040' DistrictID, 2 FacilityTypeId, 'Mulenga' [FacilityName_JHPEIGO] union 
-select 961 FacilityIndex, '1050180' FacilityID, 'Mwembeshi' FacilityName, 
-  '1050' DistrictID, 2 FacilityTypeId, 'Mwembeshi' [FacilityName_JHPEIGO] union 
-select 962 FacilityIndex, '1050220' FacilityID, 'Nampundwe' FacilityName, 
-  '1050' DistrictID, 2 FacilityTypeId, 'Nampundwe' [FacilityName_JHPEIGO] union 
-select 963 FacilityIndex, '8070360' FacilityID, 'Nanga' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Nanga' [FacilityName_JHPEIGO] union 
-select 965 FacilityIndex, '1020210' FacilityID, 'Natuseko' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Natuseko' [FacilityName_JHPEIGO] union 
-select 966 FacilityIndex, '5010220' FacilityID, 'Ngwerere RHC' FacilityName, 
-  '5010' DistrictID, 2 FacilityTypeId, 'Ngwerere RHC' [FacilityName_JHPEIGO] union 
-select 967 FacilityIndex, '2100360' FacilityID, 'Nkhwazi' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Nkhwazi' [FacilityName_JHPEIGO] union 
-select 968 FacilityIndex, '2100450' FacilityID, 'Twapia' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Twapia' [FacilityName_JHPEIGO] union 
-select 969 FacilityIndex, '2040500' FacilityID, 'Wusakile Government' FacilityName, 
-  '2040' DistrictID, 2 FacilityTypeId, 'Wusakile Government' [FacilityName_JHPEIGO] union 
-select 970 FacilityIndex, '1020100' FacilityID, 'Bwacha' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Bwacha' [FacilityName_JHPEIGO] union 
-select 971 FacilityIndex, '1050120' FacilityID, 'Kapyanga' FacilityName, 
-  '1086' DistrictID, 2 FacilityTypeId, 'Kapyanga' [FacilityName_JHPEIGO] union 
-select 972 FacilityIndex, '5020GC0' FacilityID, 'Kris Katumba' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Kris Katumba' [FacilityName_JHPEIGO] union 
-select 973 FacilityIndex, '5050X30' FacilityID, 'Makeni Konga' FacilityName, 
-  '5050' DistrictID, 2 FacilityTypeId, 'Makeni Konga' [FacilityName_JHPEIGO] union 
-select 974 FacilityIndex, '1010210' FacilityID, 'Kayosha' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Kayosha' [FacilityName_JHPEIGO] union 
-select 975 FacilityIndex, '1010320' FacilityID, 'Twalumba' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Twalumba' [FacilityName_JHPEIGO] union 
-select 976 FacilityIndex, '5010100' FacilityID, 'Chainda' FacilityName, 
-  '5010' DistrictID, 2 FacilityTypeId, 'Chainda' [FacilityName_JHPEIGO] union 
-select 977 FacilityIndex, '5020100' FacilityID, 'Chanyanya' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Chanyanya' [FacilityName_JHPEIGO] union 
-select 978 FacilityIndex, '1010100' FacilityID, 'Chibombo' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Chibombo' [FacilityName_JHPEIGO] union 
-select 979 FacilityIndex, '5020120' FacilityID, 'Chikupi' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Chikupi' [FacilityName_JHPEIGO] union 
-select 980 FacilityIndex, '1010120' FacilityID, 'Chipembi' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Chipembi' [FacilityName_JHPEIGO] union 
-select 981 FacilityIndex, '8110100' FacilityID, 'Chipepo' FacilityName, 
-  '8110' DistrictID, 2 FacilityTypeId, 'Chipepo' [FacilityName_JHPEIGO] union 
-select 982 FacilityIndex, '1010140' FacilityID, 'Chisamba' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Chisamba' [FacilityName_JHPEIGO] union 
-select 983 FacilityIndex, '5020160' FacilityID, 'Chisankane' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Chisankane' [FacilityName_JHPEIGO] union 
-select 984 FacilityIndex, '1010160' FacilityID, 'Chitanda' FacilityName, 
-  '1010' DistrictID, 2 FacilityTypeId, 'Chitanda' [FacilityName_JHPEIGO] union 
-select 985 FacilityIndex, '5030150' FacilityID, 'Chitope' FacilityName, 
-  '5030' DistrictID, 2 FacilityTypeId, 'Chitope' [FacilityName_JHPEIGO] union 
-select 986 FacilityIndex, '5010130' FacilityID, 'Chongwe HC' FacilityName, 
-  '5010' DistrictID, 2 FacilityTypeId, 'Chongwe HC' [FacilityName_JHPEIGO] union 
-select 987 FacilityIndex, '8060260' FacilityID, 'Hillcrest' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Hillcrest' [FacilityName_JHPEIGO] union 
-select 988 FacilityIndex, '2040210' FacilityID, 'Ipusukilo' FacilityName, 
-  '2040' DistrictID, 2 FacilityTypeId, 'Ipusukilo' [FacilityName_JHPEIGO] union 
-select 989 FacilityIndex, '8070170' FacilityID, 'Itebe' FacilityName, 
-  '8070' DistrictID, 2 FacilityTypeId, 'Itebe' [FacilityName_JHPEIGO] union 
-select 990 FacilityIndex, '5020010' FacilityID, 'Kafue District Hospital' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Kafue District Hospital' [FacilityName_JHPEIGO] union 
-select 991 FacilityIndex, '2100200' FacilityID, 'Kaloko' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Kaloko' [FacilityName_JHPEIGO] union 
-select 992 FacilityIndex, '5020350' FacilityID, 'Kambale' FacilityName, 
-  '5020' DistrictID, 2 FacilityTypeId, 'Kambale' [FacilityName_JHPEIGO] union 
-select 993 FacilityIndex, '5040200' FacilityID, 'Kamwala' FacilityName, 
-  '5040' DistrictID, 2 FacilityTypeId, 'Kamwala' [FacilityName_JHPEIGO] union 
-select 994 FacilityIndex, '2100210' FacilityID, 'Kaniki' FacilityName, 
-  '2100' DistrictID, 2 FacilityTypeId, 'Kaniki' [FacilityName_JHPEIGO] union 
-select 995 FacilityIndex, '5040210' FacilityID, 'Kanyama West' FacilityName, 
-  '5040' DistrictID, 2 FacilityTypeId, 'Kanyama West' [FacilityName_JHPEIGO] union 
-select 996 FacilityIndex, '8110170' FacilityID, 'Kapululira' FacilityName, 
-  '8110' DistrictID, 2 FacilityTypeId, 'Kapululira' [FacilityName_JHPEIGO] union 
-select 997 FacilityIndex, '1020280' FacilityID, 'Kasanda' FacilityName, 
-  '1020' DistrictID, 2 FacilityTypeId, 'Kasanda' [FacilityName_JHPEIGO] union 
-select 998 FacilityIndex, '5030110' FacilityID, 'Kasinsa' FacilityName, 
-  '5030' DistrictID, 2 FacilityTypeId, 'Kasinsa' [FacilityName_JHPEIGO] union 
-select 1056 FacilityIndex, '8060020' FacilityID, 'Namatama' FacilityName, 
-  '8060' DistrictID, 2 FacilityTypeId, 'Namatama' [FacilityName_JHPEIGO];
+Select 978, '1010100', 'Chibombo', 1010, 2, 'Chibombo' union all
+Select 980, '1010120', 'Chipembi', 1010, 2, 'Chipembi' union all
+Select 982, '1010140', 'Chisamba', 1010, 2, 'Chisamba' union all
+Select 984, '1010160', 'Chitanda', 1010, 2, 'Chitanda' union all
+Select 974, '1010210', 'Kayosha', 1010, 2, 'Kayosha' union all
+Select 953, '1010230', 'Malambanyama', 1010, 2, 'Malambanyama' union all
+Select 954, '1010420', 'Malombe', 1010, 2, 'Malombe' union all
+Select 958, '1010430', 'Momboshi', 1010, 2, 'Momboshi' union all
+Select 975, '1010320', 'Twalumba', 1010, 2, 'Twalumba' union all
+Select 970, '1020100', 'Bwacha', 1020, 2, 'Bwacha' union all
+Select 3, '1020020', 'Kabwe General Hospital', 1020, 2, 'Kabwe General Hospital' union all
+Select 959, '1020180', 'Kabwe Medium Prison', 1020, 2, 'Kabwe Medium Prison' union all
+Select 997, '1020280', 'Kasanda', 1020, 2, 'Kasanda' union all
+Select 943, '1020410', 'Katondo', 1020, 2, 'Katondo' union all
+Select 944, '1020330', 'Kawama', 1020, 2, 'Kawama-Kabwe Urban' union all
+Select 965, '1020210', 'Natuseko', 1020, 2, 'Natuseko' union all
+Select 947, '1050450', 'Kayanga', 1050, 2, 'Kayanga' union all
+Select 961, '1050180', 'Mwembeshi', 1050, 2, 'Mwembeshi' union all
+Select 962, '1050220', 'Nampundwe', 1050, 2, 'Nampundwe' union all
+Select 971, '1050120', 'Kapyanga', 1050, 2, 'Kapyanga' union all
+Select 988, '2040210', 'Ipusukilo', 2040, 2, 'Ipusukilo' union all
+Select 945, '2040250', 'Kawama', 2040, 2, 'Kawama-Kitwe' union all
+Select 4, '2040010', 'Kitwe Central Hospital', 2040, 2, 'Kitwe Central Hospital' union all
+Select 960, '2040510', 'Mulenga', 2040, 2, 'Mulenga' union all
+Select 969, '2040500', 'Wusakile Government', 2040, 2, 'Wusakile Government' union all
+Select 991, '2100200', 'Kaloko', 2100, 2, 'Kaloko' union all
+Select 994, '2100210', 'Kaniki', 2100, 2, 'Kaniki' union all
+Select 946, '2100240', 'Kawama', 2100, 2, 'Kawama-Ndola' union all
+Select 950, '2100270', 'Lubuto', 2100, 2, 'Lubuto' union all
+Select 952, '2100290', 'Masala Main', 2100, 2, 'Masala Main' union all
+Select 956, '2100300', 'Masala New', 2100, 2, 'Masala New' union all
+Select 5, '2100020', 'Ndola Centra Hospital', 2100, 2, 'Ndola Central Hospital' union all
+Select 967, '2100360', 'Nkhwazi', 2100, 2, 'Nkhwazi' union all
+Select 968, '2100450', 'Twapia', 2100, 2, 'Twapia' union all
+Select 6, '3010110', 'Chadiza HC', 3010, 2, 'Chadiza Urban Health Clinic' union all
+Select 7, '3030010', 'Chipata General Hospital', 3030, 2, 'Chipata General Hospital' union all
+--Select 29, '3030410', 'Chiwoko', 3030, 2, 'Chiwoko' union all
+Select 8, '3030020', 'Mwami Hospital', 3030, 2, 'Mwami Mission Hospital' union all
+Select 9, '3060010', 'Kamoto Mission Hospital', 3060, 2, 'Kamoto Mission Hospital' union all
+Select 10, '3060120', 'Masumba', 3060, 2, 'Masumba Zonal Health Clinic' union all
+Select 1, '3080010', 'Petauke District Hospital', 3080, 2, 'Petauke District Hospital' union all
+Select 12, '4030110', 'Buntungwa RHC', 4030, 2, 'Buntungwa RHC' union all
+Select 13, '4030130', 'Chembe RHC', 4030, 2, 'Chembe RHC' union all
+Select 14, '4030250', 'Mabumba RHC', 4030, 2, 'Mabumba RHC' union all
+Select 11, '4030010', 'Mansa General Hospital', 4030, 2, 'Mansa General Hospital' union all
+Select 15, '4060010', 'St. Pauls Hospital', 4060, 2, 'St. Pauls Mission Hospital' union all
+Select 30, '5020130', 'Chilanga', 5020, 2, 'Chilanga' union all
+Select 973, '5050X30', 'Makeni Konga', 5050, 2, 'Makeni Konga' union all
+Select 31, '8110110', 'Lusitu', 8110, 2, 'Chirundu-Lusitu' union all
+Select 976, '5010100', 'Chainda', 5010, 2, 'Chainda' union all
+Select 986, '5010130', 'Chongwe HC', 5010, 2, 'Chongwe HC' union all
+Select 966, '5010220', 'Ngwerere RHC', 5010, 2, 'Ngwerere RHC' union all
+Select 977, '5020100', 'Chanyanya', 5020, 2, 'Chanyanya' union all
+Select 979, '5020120', 'Chikupi', 5020, 2, 'Chikupi' union all
+Select 983, '5020160', 'Chisankane', 5020, 2, 'Chisankane' union all
+Select 990, '5020010', 'Kafue District Hospital', 5020, 2, 'Kafue District Hospital' union all
+Select 992, '5020350', 'Kambale', 5020, 2, 'Kambale' union all
+Select 948, '5020190', 'Kazimva', 5020, 2, 'Kazimva' union all
+Select 972, '5020GC0', 'Kris Katumba', 5020, 2, 'Kris Katumba' union all
+Select 28, '5020260', 'Nangongwe OPD/Maternity', 5020, 2, 'Nangongwe' union all
+Select 985, '5030150', 'Chitope', 5030, 2, 'Chitope' union all
+Select 998, '5030110', 'Kasinsa', 5030, 2, 'Kasinsa' union all
+Select 16, '5040010', 'Chainama Hospital', 5040, 2, 'Chainama Hospital' union all
+Select 17, '5040270', 'Matero Reference', 5040, 2, 'Matero Ref Clinic' union all
+Select 993, '5040200', 'Kamwala', 5040, 2, 'Kamwala' union all
+Select 995, '5040210', 'Kanyama West', 5040, 2, 'Kanyama West' union all
+Select 955, '5040250', 'Mandevu', 5040, 2, 'Mandevu' union all
+Select 18, '6050010', 'Kasama General Hospital', 6050, 2, 'Kasama General Hospital' union all
+Select 2, '6080240', 'Tazara Clinic', 6080, 2, 'Tazara Clinic' union all
+Select 19, '7020020', 'Loloma Mission Hospital', 7020, 2, 'Loloma Mission Hospital' union all
+Select 20, '7030010', 'Mukinge Mission Hospital', 7030, 2, 'Mukinge Mission Hospital' union all
+Select 21, '7060010', 'Solwezi General Hospital', 7060, 2, 'Solwezi General Hospital' union all
+Select 33, '8060040', 'Dambwa North', 8060, 2, 'Dambwa North' union all
+Select 987, '8060260', 'Hillcrest', 8060, 2, 'Hillcrest' union all
+Select 942, '8060310', 'Kasiya', 8060, 2, 'Kasiya' union all
+Select 34, '8060130', 'Linda', 8060, 2, 'Linda' union all
+Select 35, '8060190', 'Livingstone Airport', 8060, 2, 'Airport' union all
+Select 22, '8060010', 'Livingstone Hospital', 8060, 2, 'Livingstone General Hospital' union all
+Select 37, '8060170', 'Livingstone Police', 8060, 2, 'Livingstone-Police' union all
+Select 951, '8060200', 'Mahatma Gandhi', 8060, 2, 'Mahatma Gandhi' union all
+Select 36, '8060160', 'Mosi-oa-tunya', 8060, 2, 'Mosi-oa-tunya' union all
+Select 1056, '8060020', 'Namatama', 8060, 2, 'Namatama' union all
+Select 38, '8060180', 'Prisons', 8060, 2, 'Livingstone-Prisons' union all
+Select 989, '8070170', 'Itebe', 8070, 2, 'Itebe' union all
+Select 39, '8070220', 'Kaonga', 8070, 2, 'Kaonga' union all
+Select 23, '8070010', 'Mazabuka Hospital', 8070, 2, 'Mazabuka District Hospital' union all
+Select 957, '8070260', 'Mbayamusuma', 8070, 2, 'Mbayamusuma' union all
+Select 40, '8070270', 'Mugoto', 8070, 2, 'Mugoto/Musangu' union all
+Select 41, '8070280', 'Mukuyu', 8070, 2, 'Mukuyu' union all
+Select 963, '8070360', 'Nanga', 8070, 2, 'Nanga' union all
+Select 27, '8080300', 'Monze Urban Clinic', 8080, 2, 'Monze Urban Clinic' union all
+Select 24, '8090010', 'Namwala Hospital', 8090, 2, 'Namwala Hospital' union all
+Select 981, '8110100', 'Chipepo', 8110, 2, 'Chipepo' union all
+Select 996, '8110170', 'Kapululira', 8110, 2, 'Kapululira' union all
+Select 25, '8110010', 'Siavonga Hospital', 8110, 2, 'Siavonga Hospital' union all
+Select 26, '9040010', 'Lewanika General Hospital', 9040, 2, 'Lewanika General Hospital';

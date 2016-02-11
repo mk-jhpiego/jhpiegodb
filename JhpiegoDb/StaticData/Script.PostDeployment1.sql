@@ -9,12 +9,12 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-
+print 'FacilityTypeLookup';
  insert into FacilityTypeLookup(FacilityTypeID, FacilityType)
 select 1 FacilityTypeID, 'Hospital' FacilityType union
 select 2 FacilityTypeID, 'Health Centre' FacilityType;
 
-
+print 'FacilityServiceLookup';
 insert into FacilityServiceLookup(FacilityServiceID, FacilityService)
 select 1 FacilityServiceID, 'ART' FacilityService union
 select 2 FacilityServiceID, 'MC' FacilityService union
@@ -23,6 +23,7 @@ select 4 FacilityServiceID, 'STI' FacilityService union
 select 5 FacilityServiceID, 'TB/HIV' FacilityService;
 
 --ProvinceLookup
+print 'ProvinceLookup';
 insert into ProvinceLookup(ProvinceId, ProvinceName)
 select 10 ProvinceId, 'Central' ProvinceName union
 select 20 ProvinceId, 'Copperbelt' ProvinceName union
@@ -34,7 +35,7 @@ select 70 ProvinceId, 'NorthWestern' ProvinceName union
 select 80 ProvinceId, 'Southern' ProvinceName union
 select 90 ProvinceId, 'Western' ProvinceName;
 
-
+print 'DistrictLookUp';
 insert into DistrictLookUp(DistrictID,DistrictName,ProvinceID)
 select '1010' DistrictID, 'Chibombo' DistrictName, 10 ProvinceID union
 select '1020' DistrictID, 'Kabwe Urban' DistrictName, 10 ProvinceID union
@@ -112,8 +113,10 @@ select '9050' DistrictID, 'Senanga' DistrictName, 90 ProvinceID union
 select '9060' DistrictID, 'Sesheke' DistrictName, 90 ProvinceID union
 select '9070' DistrictID, 'Shangombo' DistrictName, 90 ProvinceID
 
+print 'Script FacilityLookup';
 :r .\Script.FacilityLookup.sql
 
+print 'MonthLookup';
  insert into MonthLookup (MonthID, [MonthName], [Quarter])
 select 1 MonthID, 'January' [MonthName], 1 [Quarter] union
 select 2 MonthID, 'February' [MonthName], 1 [Quarter] union
@@ -129,6 +132,7 @@ select 11 MonthID, 'November' [MonthName], 4 [Quarter] union
 select 12 MonthID, 'December' [MonthName], 4 [Quarter];
 
 --DO not change the alternate names
+print 'ProgramAreaLookup';
 insert into ProgramAreaLookup(ProgramAreaID,ProgramArea,AlternameName)
 select 1 ProgramAreaID, 'ART' ProgramArea, 'ART' AlternameName union
 select 2 ProgramAreaID, 'MC' ProgramArea , 'Prevention-MC' AlternameName union
@@ -139,9 +143,10 @@ select 6 ProgramAreaID, 'Family Planning' ProgramArea , 'Family Planning' Altern
 select 7 ProgramAreaID, 'Prevention - PWP' ProgramArea , 'Prevention - PWP' AlternameName union
 select 8 ProgramAreaID, 'Clinical Care' ProgramArea, 'Clinical Care' AlternameName;
 
-
+print 'Script IndicatorCodes';
 :r .\Script.IndicatorCodes.sql
 
+print 'GenderLookUp';
 insert into GenderLookUp(GenderID, Gender, GenderLongName)
 select 1 GenderID, 'F' Gender, 'Female' GenderLongName union
 select 2 GenderID, 'M' Gender, 'Male' GenderLongName union
