@@ -97,6 +97,7 @@
     <Build Include="Tables Obsolete\dbo.FacilityServices.Table.sql" />
     <Build Include="Tables\dbo.AgeGroupLookupAlternate.Table.sql" />
     <Build Include="Views\FacilityList.sql" />
+    <Build Include="Views\SummaryDataOnServer.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />

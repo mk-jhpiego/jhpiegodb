@@ -33,6 +33,10 @@ Select 959, '1020180', 'Kabwe Medium Prison', 1020, 2, 'Kabwe Medium Prison' uni
 Select 997, '1020280', 'Kasanda', 1020, 2, 'Kasanda' union all
 Select 943, '1020410', 'Katondo', 1020, 2, 'Katondo' union all
 Select 944, '1020330', 'Kawama', 1020, 2, 'Kawama-Kabwe Urban' union all
+
+Select 1058, '1020150', 'Mahatma Gandhi Memorial', 1020, 2, 'Mahatma Gandhi Memorial' union all
+Select 1057, '1020340', 'Mpima Prison', 1020, 2, 'Mpima Prison' union all
+
 Select 965, '1020210', 'Natuseko', 1020, 2, 'Natuseko' union all
 Select 947, '1050450', 'Kayanga', 1050, 2, 'Kayanga' union all
 Select 961, '1050180', 'Mwembeshi', 1050, 2, 'Mwembeshi' union all
