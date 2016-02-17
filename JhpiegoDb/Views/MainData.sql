@@ -13,7 +13,7 @@ convert(varchar,yr.[YearName])+' '+
 substring(mnth.[MonthName],1,3)
 AS 'Year Month',
 Indicatorvalue, 
-agrp.AgeGroupID, gndr.GenderID
+agrp.AgeGroupID, gndr.GenderID, 1 RowValue
 FROM FacilityData  f 
 join YearLookUp yr on f.ReferenceYear = yr.YearID
 join MonthLookUp mnth on f.ReferenceMonth = mnth.MonthID

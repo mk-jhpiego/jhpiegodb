@@ -116,5 +116,5 @@ Select 27, '8080300', 'Monze Urban Clinic', 8080, 2, 'Monze Urban Clinic' union 
 Select 24, '8090010', 'Namwala Hospital', 8090, 2, 'Namwala Hospital' union all
 Select 981, '8110100', 'Chipepo', 8110, 2, 'Chipepo' union all
 Select 996, '8110170', 'Kapululira', 8110, 2, 'Kapululira' union all
-Select 25, '8110010', 'Siavonga Hospital', 8110, 2, 'Siavonga Hospital' union all
+Select 25, '8110010', 'Siavonga Hospital', 8110, 2, 'Siavonga Hospital' union all	
 Select 26, '9040010', 'Lewanika General Hospital', 9040, 2, 'Lewanika General Hospital';
