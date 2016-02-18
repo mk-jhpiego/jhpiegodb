@@ -18,6 +18,11 @@ Select 213, '9020240', 'Luena Barracks Camp Hospital', 9020, 2, 'Luena Barracks 
 Select 214, '90201540', 'ZNS Mangango Camp', 9020, 2, 'ZNS Mangango Camp' union all
 
 --CDC IHP Sites
+Select 1059, '8070XX1', 'Nanga PLC', 8070, 2,  'Nanga PLC' union all
+Select 1060, '8070380', 'Research Station', 8070, 2,  'Research Station' union all
+Select 1063, '8060200', 'Nsongwe', 8060, 2,  'Nsongwe' union all
+Select 1062, '8060050', 'Simoonga', 8060, 2,  'Simoonga' union all
+
 Select 978, '1010100', 'Chibombo', 1010, 2, 'Chibombo' union all
 Select 980, '1010120', 'Chipembi', 1010, 2, 'Chipembi' union all
 Select 982, '1010140', 'Chisamba', 1010, 2, 'Chisamba' union all
@@ -101,7 +106,7 @@ Select 34, '8060130', 'Linda', 8060, 2, 'Linda' union all
 Select 35, '8060190', 'Livingstone Airport', 8060, 2, 'Airport' union all
 Select 22, '8060010', 'Livingstone Hospital', 8060, 2, 'Livingstone General Hospital' union all
 Select 37, '8060170', 'Livingstone Police', 8060, 2, 'Livingstone-Police' union all
-Select 951, '8060200', 'Mahatma Gandhi', 8060, 2, 'Mahatma Gandhi' union all
+Select 951, '8060080', 'Mahatma Gandhi', 8060, 2, 'Mahatma Gandhi' union all
 Select 36, '8060160', 'Mosi-oa-tunya', 8060, 2, 'Mosi-oa-tunya' union all
 Select 1056, '8060020', 'Namatama', 8060, 2, 'Namatama' union all
 Select 38, '8060180', 'Prisons', 8060, 2, 'Livingstone-Prisons' union all
