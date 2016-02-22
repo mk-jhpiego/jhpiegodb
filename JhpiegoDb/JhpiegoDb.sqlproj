@@ -98,6 +98,7 @@
     <Build Include="Tables\dbo.AgeGroupLookupAlternate.Table.sql" />
     <Build Include="Views\FacilityList.sql" />
     <Build Include="Views\SummaryDataOnServer.sql" />
+    <Build Include="Views\FacilityLookupAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
