@@ -99,6 +99,8 @@
     <Build Include="Views\FacilityList.sql" />
     <Build Include="Views\SummaryDataOnServer.sql" />
     <Build Include="Views\FacilityLookupAll.sql" />
+    <Build Include="Views\DataSummaryDOD.sql" />
+    <Build Include="Tables\dbo.DodKeyIndicator.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
@@ -109,5 +111,6 @@
     <None Include="JhpiegoDb.publish.xml" />
     <None Include="LatestDb\JhpiegoDb.bak" />
     <None Include="StaticData\Script.IndicatorCodes.sql" />
+    <None Include="StaticData\Script.DodKeyIndicators.sql" />
   </ItemGroup>
 </Project>
