@@ -27,6 +27,11 @@ Select 1069, '1010220', 'Keembe', 1010, 2, 'Keembe' union all
 Select 1070, '50402X0', 'Kanyama Self-help', 5040, 2, 'Kanyama Self-help' union all
 Select 1071, '8110180', 'Jamba', 8110, 2, 'Jamba' union all
 
+Select 1072, '1010010', 'Liteta Hospital', 1010, 2, 'Liteta Hospital' union all
+Select 1073, '2040300', 'Mindolo 1', 2040, 2, 'Mindolo 1' union all
+Select 1074, '5020240', 'Mt. Makulu', 5020, 2, 'Mt. Makulu' union all
+Select 1075, '10502X0', 'Kalundu', 1050, 2, 'Kalundu' union all
+
 Select 1059, '8070XX1', 'Nanga PLC', 8070, 2,  'Nanga PLC' union all
 Select 1060, '8070380', 'Research Station', 8070, 2,  'Research Station' union all
 Select 1063, '8060200', 'Nsongwe', 8060, 2,  'Nsongwe' union all
