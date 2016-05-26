@@ -116,5 +116,6 @@
     <None Include="LatestDb\JhpiegoDb.bak" />
     <None Include="StaticData\Script.IndicatorCodes.sql" />
     <None Include="StaticData\Script.DodKeyIndicators.sql" />
+    <None Include="LatestDb\JhpiegoDb_latest.dacpac" />
   </ItemGroup>
 </Project>
