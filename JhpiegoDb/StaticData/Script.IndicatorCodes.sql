@@ -1,4 +1,4 @@
-﻿
+﻿print 'inserting into IndicatorLookup'
 insert into IndicatorLookup (IndicatorSerial,IndicatorID, IndicatorDescription, zPosition, ProgramAreaID)
 select 1 IndicatorSerial , 'STI1' IndicatorId, 'Number of  clients diagnosed, treated and counselled  for STI (index plus partners)' IndicatorDescription, 1 zPosition , 4 ProgramAreaID union
 select 2 IndicatorSerial , 'STI2' IndicatorId, 'Number of STI partners treated' IndicatorDescription, 2 zPosition , 4 ProgramAreaID union

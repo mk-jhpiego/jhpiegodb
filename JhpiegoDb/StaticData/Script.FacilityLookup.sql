@@ -15,9 +15,18 @@ Select 210, '8010310', 'ZNS Choma Camp', 8010, 2, 'ZNS Choma Camp' union all
 Select 211, '8060XX0', 'Army School of Ordinance', 8060, 2, 'Army School of Ordinance' union all
 Select 212, '8060AC0', 'ZAF Livingstone Sick Quarters', 8060, 2, 'ZAF Livingstone Sick Quarters' union all
 Select 213, '9020240', 'Luena Barracks Camp Hospital', 9020, 2, 'Luena Barracks Camp Hospital' union all
-Select 214, '90201540', 'ZNS Mangango Camp', 9020, 2, 'ZNS Mangango Camp' union all
+Select 214, '9020150', 'ZNS Mangango Camp', 9020, 2, 'ZNS Mangango Camp' union all
 
 --CDC IHP Sites
+Select 1064, '10501X0', 'Chabota', 1050, 2,  'Chabota' union all
+Select 1065, '2100230', 'Kavu (St Dominics)', 2100, 2,  'Kavu (St Dominics)' union all
+Select 1066, '21001X0', 'Pamodzi', 2100, 2,  'Pamodzi' union all
+Select 1067, '2100340', 'Ndeke', 2100, 2,  'Ndeke' union all
+Select 1068, '50300X0', 'Luangwa District Hospital', 5030, 2, 'Luangwa District Hospital' union all
+Select 1069, '1010220', 'Keembe', 1010, 2, 'Keembe' union all
+Select 1070, '50402X0', 'Kanyama Self-help', 5040, 2, 'Kanyama Self-help' union all
+Select 1071, '8110180', 'Jamba', 8110, 2, 'Jamba' union all
+
 Select 1059, '8070XX1', 'Nanga PLC', 8070, 2,  'Nanga PLC' union all
 Select 1060, '8070380', 'Research Station', 8070, 2,  'Research Station' union all
 Select 1063, '8060200', 'Nsongwe', 8060, 2,  'Nsongwe' union all
