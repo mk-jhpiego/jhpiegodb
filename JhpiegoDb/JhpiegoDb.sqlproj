@@ -64,6 +64,7 @@
     <Folder Include="procedures\procs obsolete" />
     <Folder Include="StaticData" />
     <Folder Include="LatestDb" />
+    <Folder Include="Tables\Finance" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="procedures\qry_append_FacilityData_fromTemp.sql" />
@@ -99,6 +100,9 @@
     <Build Include="Views\FacilityList.sql" />
     <Build Include="Views\SummaryDataOnServer.sql" />
     <Build Include="Views\FacilityLookupAll.sql" />
+    <Build Include="Tables\Finance\dbo.ProjectSpendingDetails.sql" />
+    <Build Include="Tables\Finance\dbo.GlCodes.sql" />
+    <Build Include="Tables\Finance\dbo.Projects.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
