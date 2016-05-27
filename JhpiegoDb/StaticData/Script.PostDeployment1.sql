@@ -218,7 +218,8 @@ select 12 YearId, 2016 YearName, 99 Yposition;
 print 'Script DodKeyIndicators';
 :r .\Script.DodKeyIndicators.sql
 
-
+print 'Script ProjectManagement';
+:r .\Script.ProjectManagement.sql
 --:r .\Script.backupDb.sql
 
 

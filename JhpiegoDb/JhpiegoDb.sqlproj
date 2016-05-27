@@ -105,6 +105,7 @@
     <Build Include="Tables\Finance\dbo.ProjectSpendingDetails.sql" />
     <Build Include="Tables\Finance\dbo.GlCodes.sql" />
     <Build Include="Tables\Finance\dbo.Projects.sql" />
+    <Build Include="Views\ProjectSpendingSummary.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />
@@ -117,5 +118,6 @@
     <None Include="StaticData\Script.IndicatorCodes.sql" />
     <None Include="StaticData\Script.DodKeyIndicators.sql" />
     <None Include="LatestDb\JhpiegoDb_latest.dacpac" />
+    <None Include="StaticData\Script.ProjectManagement.sql" />
   </ItemGroup>
 </Project>
