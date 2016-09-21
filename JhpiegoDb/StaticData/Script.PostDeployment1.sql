@@ -141,7 +141,10 @@ select 4 ProgramAreaID, 'STI' ProgramArea , 'STI' AlternameName union
 select 5 ProgramAreaID, 'TB' ProgramArea , 'TB' AlternameName union
 select 6 ProgramAreaID, 'Family Planning' ProgramArea , 'Family Planning' AlternameName union
 select 7 ProgramAreaID, 'Prevention - PWP' ProgramArea , 'Prevention - PWP' AlternameName union
-select 8 ProgramAreaID, 'Clinical Care' ProgramArea, 'Clinical Care' AlternameName;
+select 8 ProgramAreaID, 'Clinical Care' ProgramArea, 'Clinical Care' AlternameName union
+select 9 ProgramAreaID, 'HTC' ProgramArea, 'HTC' AlternameName union
+select 10 ProgramAreaID, 'CECAP' ProgramArea, 'CECAP' AlternameName;
+
 
 print 'Script IndicatorCodes';
 :r .\Script.IndicatorCodes.sql
@@ -169,6 +172,8 @@ select 11 AgeGroupID, '15+' AgeGroupName union
 select 12 AgeGroupID, '<10' AgeGroupName union
 select 13 AgeGroupID, '<15' AgeGroupName union
 select 14 AgeGroupID, '<20' AgeGroupName union
+select 15 AgeGroupID, '30-39' AgeGroupName union
+select 16 AgeGroupID, '40-49' AgeGroupName union
 select 70 AgeGroupID, 'Total' AgeGroupName union
 select 99 AgeGroupID, 'Missing Data' AgeGroupName;
 
@@ -197,6 +202,8 @@ select '15+' AgeGroup, 11 AgeGroupId union
 select '<10' AgeGroup, 12 AgeGroupId union 
 select '<15' AgeGroup, 13 AgeGroupId union 
 select '<20' AgeGroup, 14 AgeGroupId union 
+select '30-39' AgeGroup, 15 AgeGroupId union 
+select '40-49' AgeGroup, 16 AgeGroupId union 
 select 'Total' AgeGroup, 70 AgeGroupId union 
 select 'Missing Data' AgeGroup, 99 AgeGroupId; 
 

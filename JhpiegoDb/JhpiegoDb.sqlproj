@@ -119,5 +119,6 @@
     <None Include="StaticData\Script.DodKeyIndicators.sql" />
     <None Include="LatestDb\JhpiegoDb_latest.dacpac" />
     <None Include="StaticData\Script.ProjectManagement.sql" />
+    <None Include="JhpiegoDb_xps.publish.publish.xml" />
   </ItemGroup>
 </Project>

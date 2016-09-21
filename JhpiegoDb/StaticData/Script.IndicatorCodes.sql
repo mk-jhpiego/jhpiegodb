@@ -166,4 +166,36 @@ select 163 IndicatorSerial , 'MC4' IndicatorId, 'Number of MC clients testing po
 select 164 IndicatorSerial , 'MC4a' IndicatorId, 'Number of MC clients testing positive for HIV, collecting results and referred for clinical care beyond MC' IndicatorDescription, 164 zPosition , 2 ProgramAreaID union
 select 165 IndicatorSerial , 'MC4b' IndicatorId, 'Number of VMMC clients who reached the the referral service (ART, STI)' IndicatorDescription, 165 zPosition , 2 ProgramAreaID union
 select 166 IndicatorSerial , 'MC7' IndicatorId, 'Number of HIV-positive men circumcised (tested at MC site) who were referred for HIV care' IndicatorDescription, 166 zPosition , 2 ProgramAreaID union
-select 167 IndicatorSerial , 'MC12' IndicatorId, 'Number of males circumcised within the reporting period who return at least once for post-operative follow-up care (routine or emergent) within 48hours of surgery' IndicatorDescription, 167 zPosition , 2 ProgramAreaID;
+select 167 IndicatorSerial , 'MC12' IndicatorId, 'Number of males circumcised within the reporting period who return at least once for post-operative follow-up care (routine or emergent) within 48hours of surgery' IndicatorDescription, 167 zPosition , 2 ProgramAreaID union
+
+select 168 IndicatorSerial , 'CECAP 1' IndicatorId, 'Number of clients who received a VIA screening (Total)' IndicatorDescription, 168 zPosition , 10 ProgramAreaID union
+select 169 IndicatorSerial , 'CECAP 2' IndicatorId, 'Number of  new women screened using VIA (New)' IndicatorDescription, 169 zPosition , 10 ProgramAreaID union
+select 170 IndicatorSerial , 'CECAP 3' IndicatorId, 'Number of clients who had HIV test done and received results (during screening) this month' IndicatorDescription, 170 zPosition , 10 ProgramAreaID union
+select 171 IndicatorSerial , 'CECAP 4' IndicatorId, 'Number of New women screened using VIA and tested for HIV' IndicatorDescription, 171 zPosition , 10 ProgramAreaID union
+select 172 IndicatorSerial , 'CECAP 5' IndicatorId, 'Total Number of women screen for VIA with Positive HIV test result.' IndicatorDescription, 172 zPosition , 10 ProgramAreaID union
+select 173 IndicatorSerial , 'CECAP 6' IndicatorId, 'Number of clients with NEGATIVE VIA result' IndicatorDescription, 173 zPosition , 10 ProgramAreaID union
+select 174 IndicatorSerial , 'CECAP 7' IndicatorId, 'Number of clients with POSITIVE VIA result' IndicatorDescription, 174 zPosition , 10 ProgramAreaID union
+select 175 IndicatorSerial , 'CECAP 8' IndicatorId, 'Number of clients with VIA today AND cryotherapy performed today. (SVA) ' IndicatorDescription, 175 zPosition , 10 ProgramAreaID union
+select 176 IndicatorSerial , 'CECAP 9' IndicatorId, 'Number of clients with previously postponed cryotherapy performed today' IndicatorDescription, 176 zPosition , 10 ProgramAreaID union
+select 177 IndicatorSerial , 'CECAP 10' IndicatorId, 'Number of clients with VIA today AND cryotherapy postponed' IndicatorDescription, 177 zPosition , 10 ProgramAreaID union
+select 178 IndicatorSerial , 'CECAP 11' IndicatorId, 'Number of clients referred for large lesions' IndicatorDescription, 178 zPosition , 10 ProgramAreaID union
+select 179 IndicatorSerial , 'CECAP 12' IndicatorId, 'Number of clients with suspected cancer' IndicatorDescription, 179 zPosition , 10 ProgramAreaID union
+select 180 IndicatorSerial , 'CECAP 13' IndicatorId, 'Number of clients with a post-treatment complication ' IndicatorDescription, 180 zPosition , 10 ProgramAreaID union
+select 181 IndicatorSerial , 'CECAP 14' IndicatorId, 'Number new women treated with cryotherapy' IndicatorDescription, 181 zPosition , 10 ProgramAreaID union
+select 182 IndicatorSerial , 'CECAP 15' IndicatorId, 'Total number of unique clients seen this month' IndicatorDescription, 182 zPosition , 10 ProgramAreaID union
+select 183 IndicatorSerial , 'CT1' IndicatorId, 'Total No. of clients who were counselled and tested for HIV and received their test results  at the facility Including PITC this month.' IndicatorDescription, 183 zPosition , 9 ProgramAreaID union
+select 184 IndicatorSerial , 'CT1a.1' IndicatorId, 'No. of clients who received counseling and testing (CT) services for HIV and received their test results this month' IndicatorDescription, 184 zPosition , 9 ProgramAreaID union
+select 185 IndicatorSerial , 'CT1b' IndicatorId, 'Number of all clients who tested  HIV positive for HIV and collected test results.' IndicatorDescription, 185 zPosition , 9 ProgramAreaID union
+select 186 IndicatorSerial , 'CT1b.1' IndicatorId, 'Number of clients who tested as couple and collected test results at this facility this month.' IndicatorDescription, 186 zPosition , 9 ProgramAreaID union
+select 187 IndicatorSerial , 'CT1c' IndicatorId, 'Numbner of HIV DISCONDANT couples who received test results. (Count Females only).' IndicatorDescription, 187 zPosition , 9 ProgramAreaID union
+select 188 IndicatorSerial , 'CT1c.1' IndicatorId, 'Number of clients who were re-tested for HIV and received there results' IndicatorDescription, 188 zPosition , 9 ProgramAreaID union
+select 189 IndicatorSerial , 'CT1d' IndicatorId, 'Number of clients who re-tested and tested positive for HIV.' IndicatorDescription, 189 zPosition , 9 ProgramAreaID union
+select 190 IndicatorSerial , 'CT.e' IndicatorId, 'Numbner of clients who Tested for HIV through PITC (Total of PMTCT,STI,TB,MC,CECAP,FP)' IndicatorDescription, 190 zPosition , 9 ProgramAreaID union
+select 191 IndicatorSerial , 'CT.e.1' IndicatorId, 'Number of clients who tested for HIV through PMTCT' IndicatorDescription, 191 zPosition , 9 ProgramAreaID union
+select 192 IndicatorSerial , 'CT.e.2' IndicatorId, 'Number of clients who tested for HIV through TB' IndicatorDescription, 192 zPosition , 9 ProgramAreaID union
+select 193 IndicatorSerial , 'CT.e.3' IndicatorId, 'Number of clients who tested for HIV through STI' IndicatorDescription, 193 zPosition , 9 ProgramAreaID union
+select 194 IndicatorSerial , 'CT.e.4' IndicatorId, 'Number of clients who tested for HIV through FP' IndicatorDescription, 194 zPosition , 9 ProgramAreaID union
+select 195 IndicatorSerial , 'CT.e.5' IndicatorId, 'Number of clients who tested for HIV through CECAP' IndicatorDescription, 195 zPosition , 9 ProgramAreaID union
+select 196 IndicatorSerial , 'CT.e.6' IndicatorId, 'Number of clients who tested for HIV through VMMC' IndicatorDescription, 196 zPosition , 9 ProgramAreaID union
+select 197 IndicatorSerial , 'CT.e.7' IndicatorId, 'Number of Clients who tested positive from PITC' IndicatorDescription, 197 zPosition , 9 ProgramAreaID union
+select 198 IndicatorSerial , 'CT.f' IndicatorId, 'Total number of clients referred for Pre ART Care Services this Months' IndicatorDescription, 198 zPosition , 9 ProgramAreaID;
