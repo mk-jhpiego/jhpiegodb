@@ -175,6 +175,8 @@ select 14 AgeGroupID, '<20' AgeGroupName union
 select 15 AgeGroupID, '30-39' AgeGroupName union
 select 16 AgeGroupID, '40-49' AgeGroupName union
 select 70 AgeGroupID, 'Total' AgeGroupName union
+--  GRAND TOTAL
+select 71 AgeGroupID, 'GRAND TOTAL' AgeGroupName union
 select 99 AgeGroupID, 'Missing Data' AgeGroupName;
 
 insert into AgeGroupLookupAlternate (AgeGroup, AgeGroupId)
@@ -205,6 +207,7 @@ select '<20' AgeGroup, 14 AgeGroupId union
 select '30-39' AgeGroup, 15 AgeGroupId union 
 select '40-49' AgeGroup, 16 AgeGroupId union 
 select 'Total' AgeGroup, 70 AgeGroupId union 
+select 'GRAND TOTAL' AgeGroup, 71 AgeGroupId union 
 select 'Missing Data' AgeGroup, 99 AgeGroupId; 
 
 
