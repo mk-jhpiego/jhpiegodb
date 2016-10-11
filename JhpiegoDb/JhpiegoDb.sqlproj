@@ -106,6 +106,9 @@
     <Build Include="Tables\Finance\dbo.GlCodes.sql" />
     <Build Include="Tables\Finance\dbo.Projects.sql" />
     <Build Include="Views\ProjectSpendingSummary.sql" />
+    <Build Include="Tables\dbo.FacilityDataBackupSet.Table.sql" />
+    <Build Include="Tables\dbo.FacilityDataBackupAll.Table.sql" />
+    <Build Include="procedures\proc_BackupAndDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="StaticData\Script.PostDeployment1.sql" />

@@ -32,6 +32,10 @@ Select 1073, '2040300', 'Mindolo 1', 2040, 2, 'Mindolo 1' union all
 Select 1074, '5020240', 'Mt. Makulu', 5020, 2, 'Mt. Makulu' union all
 Select 1075, '10502X0', 'Kalundu', 1050, 2, 'Kalundu' union all
 
+Select 1076, '8010230', 'Mochipapa', 8010, 2, 'Mochipapa' union all
+Select 1077, '8010270', 'Popota', 8010, 2, 'Popota' union all
+Select 1078, '8080200', 'Bweengwa', 8080, 2, 'Bweengwa' union all
+
 Select 1059, '8070XX1', 'Nanga PLC', 8070, 2,  'Nanga PLC' union all
 Select 1060, '8070380', 'Research Station', 8070, 2,  'Research Station' union all
 Select 1063, '8060200', 'Nsongwe', 8060, 2,  'Nsongwe' union all
