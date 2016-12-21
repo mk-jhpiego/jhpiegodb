@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -120,8 +121,8 @@
     <None Include="LatestDb\JhpiegoDb.bak" />
     <None Include="StaticData\Script.IndicatorCodes.sql" />
     <None Include="StaticData\Script.DodKeyIndicators.sql" />
-    <None Include="LatestDb\JhpiegoDb_latest.dacpac" />
     <None Include="StaticData\Script.ProjectManagement.sql" />
     <None Include="JhpiegoDb_xps.publish.publish.xml" />
+    <None Include="JhpiegoDb_Server.publish.publish.xml" />
   </ItemGroup>
 </Project>

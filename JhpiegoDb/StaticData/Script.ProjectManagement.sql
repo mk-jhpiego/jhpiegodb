@@ -122,10 +122,10 @@ select 78, '90 - 80037290', '90-80037290' union
 select 79, '91 - 80025591 PAMO', '91-80025591pamo' union 
 select 80, '91 - 90061491', '91-90061491' union 
 select 81, '96 - 80025596', '96-80025596' union 
-select 82, '97 - 80035497', '97-80035497' 
+select 82, '97 - 80035497', '97-80035497';
 --select 83, 'HCT - 90056646', 'hct-90056646' union 
 --select 84, 'PMTCT - 90056646', 'pmtct-90056646' union 
 --select 85, 'SM360 - 80033971', 'sm360-80033971' union 
 --select 86, 'Sys Stren - 90056646', 'sysstren-90056646' union 
 --select 87, 'TB - 90056646', 'tb-90056646'
-;
+print 'Completed inserting into ProjectCodes';

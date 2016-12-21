@@ -111,7 +111,7 @@ select '9030' DistrictID, 'Lukulu' DistrictName, 90 ProvinceID union
 select '9040' DistrictID, 'Mongu' DistrictName, 90 ProvinceID union
 select '9050' DistrictID, 'Senanga' DistrictName, 90 ProvinceID union
 select '9060' DistrictID, 'Sesheke' DistrictName, 90 ProvinceID union
-select '9070' DistrictID, 'Shangombo' DistrictName, 90 ProvinceID
+select '9070' DistrictID, 'Shangombo' DistrictName, 90 ProvinceID;
 
 print 'Script FacilityLookup';
 :r .\Script.FacilityLookup.sql
@@ -156,6 +156,7 @@ select 2 GenderID, 'M' Gender, 'Male' GenderLongName union
 select 9 GenderID, 'NA' Gender, 'NA' GenderLongName union
 select 99 GenderID, 'MissingData' Gender , 'MissingData' GenderLongName;
 
+print 'AgeGroupLookup';
 
 insert into AgeGroupLookup (AgeGroupID,AgeGroupName)
 select 1 AgeGroupID, '< 1' AgeGroupName union
@@ -179,9 +180,10 @@ select 71 AgeGroupID, 'GRAND TOTAL' AgeGroupName union
 --Added 2016 09 23
 select 72 AgeGroupID, 'Total Males and Females' AgeGroupName union
 select 73 AgeGroupID, 'Total Males' AgeGroupName union
-select 74 AgeGroupID, 'Total Females' AgeGroupName
-
+select 74 AgeGroupID, 'Total Females' AgeGroupName union
 select 99 AgeGroupID, 'Missing Data' AgeGroupName;
+
+print 'AgeGroupLookupAlternate';
 
 insert into AgeGroupLookupAlternate (AgeGroup, AgeGroupId)
 select '< 1' AgeGroup, 1 AgeGroupId union 
@@ -216,10 +218,10 @@ select 'GRAND TOTAL' AgeGroup, 71 AgeGroupId union
 select 'Total Males and Females' AgeGroup, 71 AgeGroupId union
 
 select 'Total Males' AgeGroup, 73 AgeGroupId union
-select 'Total Females' AgeGroup, 74 AgeGroupId
-
+select 'Total Females' AgeGroup, 74 AgeGroupId union
 select 'Missing Data' AgeGroup, 99 AgeGroupId; 
 
+print 'YearLookup';
 
 insert into [dbo].[YearLookUp](YearId, YearName, Yposition) 
 select 1 YearId, 2005 YearName, 99 Yposition union

@@ -18,6 +18,39 @@ Select 213, '9020240', 'Luena Barracks Camp Hospital', 9020, 2, 'Luena Barracks 
 Select 214, '9020150', 'ZNS Mangango Camp', 9020, 2, 'ZNS Mangango Camp' union all
 
 --CDC IHP Sites
+Select 1150, '2010100', 'Kakoso', 2010, 2, 'Kakoso' union all 
+Select 1163, '2010150', 'Lubengele', 2010, 2, 'Lubengele' union all 
+Select 1162, '2020140', 'Kalilo', 2020, 2, 'Kalilo' union all 
+Select 1160, '2020150', 'Kasompe', 2020, 2, 'Kasompe' union all 
+Select 1159, '2020X20', 'Luano - Kapisha', 2020, 2, 'Luano - Kapisha' union all 
+Select 1158, '2040120', 'Bulangililo clinic', 2040, 2, 'Bulangililo clinic' union all 
+Select 1149, '2040230', 'Kamfinsa  Clinic', 2040, 2, 'Kamfinsa  Clinic' union all 
+Select 1156, '2040270', 'Luangwa Clinic', 2040, 2, 'Luangwa Clinic' union all 
+Select 1164, '5020170', 'Estates', 5020, 2, 'Estates' union all 
+Select 1154, '5040170', 'George', 5040, 2, 'George' union all 
+Select 1153, '5040310', 'Lusaka Railway', 5040, 2, 'Lusaka Railway' union all 
+Select 1145, '8040020', 'Kalomo District Hospital', 8040, 2, 'Kalomo District Hospital' union all 
+Select 1152, '8040120', 'Simwatachela', 8040, 2, 'Simwatachela' union all 
+Select 1151, '8050170', 'Musokotwane', 8050, 2, 'Musokotwane' union all 
+Select 1171, '8060120', 'Libuyu', 8060, 2, 'Libuyu' union all 
+Select 1155, '8060100', 'Maramba', 8060, 2, 'Maramba' union all 
+Select 1157, '8070140', 'Chivuna', 8070, 2, 'Chivuna' union all 
+Select 1146, '8070030', 'Kafue Gorge Hospital', 8070, 2, 'Kafue Gorge Hospital' union all 
+Select 1176, '8070210', 'Kaleya Urban', 8070, 2, 'Kaleya Urban' union all 
+Select 1175, '8070240', 'Lubombo', 8070, 2, 'Lubombo' union all 
+Select 1174, '8070250', 'Magoye', 8070, 2, 'Magoye' union all 
+Select 1173, '8070370', 'Nega Nega', 8070, 2, 'Nega Nega' union all 
+Select 1165, '8070320', 'Njomona', 8070, 2, 'Njomona' union all 
+--Select 1172, '8080200', 'Bwengwa', 8080, 2, 'Bwengwa' union all 
+Select 1148, '9010010', 'Kalabo District Hospital', 9010, 2, 'Kalabo District Hospital' union all 
+Select 1170, '9010200', 'Sikongo', 9010, 2, 'Sikongo' union all 
+Select 1169, '8040X10', 'Mulamba', 8040, 2, 'Mulamba' union all 
+Select 1168, '9060130', 'Katima-Mulilo', 9060, 2, 'Katima-Mulilo' union all 
+Select 1167, '9040150', 'Limulunga Stage II', 9040, 2, 'Limulunga Stage II' union all 
+Select 1166, '9040220', 'Mulambwa', 9040, 2, 'Mulambwa' union all 
+Select 1147, '9050010', 'Senanga District Hospital', 9050, 2, 'Senanga District Hospital' union all 
+Select 1144, '9060030', 'Yeta District Hospital', 9060, 2, 'Yeta District Hospital' union all 
+
 Select 1064, '10501X0', 'Chabota', 1050, 2,  'Chabota' union all
 Select 1065, '2100230', 'Kavu (St Dominics)', 2100, 2,  'Kavu (St Dominics)' union all
 Select 1066, '21001X0', 'Pamodzi', 2100, 2,  'Pamodzi' union all
